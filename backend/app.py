@@ -33,6 +33,7 @@ app.add_middleware(
         "http://127.0.0.1:5175",
         "http://127.0.0.1:5176",
         "http://127.0.0.1:5177",
+        "https://peblo-tv-mini-1.onrender.com",
     ],
     allow_methods=["GET", "POST", "PATCH", "DELETE"],
     allow_headers=["*"] ,
