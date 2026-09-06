@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "fixture_kind": "deterministic_replacement",
+  "notes": [
+    "This configuration is a local replacement contract, not the original Peblo challenge reference file.",
+    "Season 0 is reserved for trailers and is excluded from viewer catalogue results.",
+    "A shared content_group identifies language variants of one logical episode.",
+    "The artwork.validation field is fixture metadata only; production/backend artwork validation MUST independently validate actual image dimensions, actual aspect ratio, actual file size, and actual file content/type, and must not trust the seed validation value."
+  ],
+  "sections": [
+    {"id":"drama","label":"Drama"},
+    {"id":"science-technology","label":"Science & Technology"},
+    {"id":"lifestyle","label":"Lifestyle"},
+    {"id":"documentary","label":"Documentary"},
+    {"id":"kids","label":"Kids"},
+    {"id":"comedy","label":"Comedy"},
+    {"id":"nature","label":"Nature"},
+    {"id":"arts","label":"Arts"}
+  ],
+  "categories": [
+    {"value":"Drama","label":"Drama"},
+    {"value":"Science & Technology","label":"Science & Technology"},
+    {"value":"Lifestyle","label":"Lifestyle"},
+    {"value":"Documentary","label":"Documentary"},
+    {"value":"Kids","label":"Kids"},
+    {"value":"Comedy","label":"Comedy"},
+    {"value":"Nature","label":"Nature"},
+    {"value":"Arts","label":"Arts"}
+  ],
+  "languages": [
+    {"code":"en","label":"English"},
+    {"code":"es","label":"Spanish"},
+    {"code":"fr","label":"French"},
+    {"code":"de","label":"German"}
+  ],
+  "season_rules": {
+    "trailer_season": 0,
+    "viewer_excluded_seasons": [0],
+    "normal_season_minimum": 1
+  },
+  "content_group_rules": {
+    "variant_key": "content_group",
+    "variant_meaning": "Rows with the same content_group are language variants of one episode.",
+    "catalogue_behavior": "Collapse variants into one catalogue entry and expose available languages."
+  },
+  "artwork": {
+    "required_fields": ["path","width","height","bytes","validation"],
+    "required_dimensions": {"width":1600,"height":900},
+    "required_aspect_ratio": {"width":16,"height":9},
+    "max_bytes": 204800,
+    "validation_values": ["valid","invalid_wrong_dimensions","invalid_wrong_aspect_ratio","invalid_oversized_file"],
+    "fixture_invalid_cases": {
+      "wrong_dimensions": "show-001-s1-e3-en",
+      "wrong_aspect_ratio": "show-002-s1-e4-en",
+      "oversized_file": "show-003-s1-e5-en"
+    }
+  },
+  "fixture_expectations": {
+    "episode_rows": 95,
+    "shows": 8,
+    "season_zero_records": 8,
+    "multi_language_content_groups": 8
+  }
+}

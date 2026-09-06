@@ -1,0 +1,1 @@
+{"name":"peblo-tv-mini-cms","private":true,"scripts":{"dev":"vite","build":"tsc -b && vite build"},"dependencies":{"react":"latest","react-dom":"latest","typescript":"latest","vite":"latest"},"devDependencies":{"@types/react":"^19.2.18","@types/react-dom":"^19.2.7"}}
